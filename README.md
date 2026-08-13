@@ -1,52 +1,54 @@
-# Econometrics Skills
+# 计量经济学 Skills
 
-Reusable Codex skills for applied econometrics. The MVP turns an empirical paper or replication project into three reviewable workflows:
+[English](README_EN.md) | **简体中文**
 
-- `econometrics-audit` audits the estimand, identification strategy, estimation, inference, robustness, and claim strength.
-- `econometrics-replication` audits Stata, R, and Python replication packages without executing untrusted research code by default.
-- `econometrics-reviewer` produces a source-grounded referee report for an empirical economics manuscript.
-- `econometrics-shared` supplies common research contracts and quality gates used by the three triggerable skills.
+面向应用计量经济学的可复用 Codex Skills。本项目的 MVP 将实证论文或复现项目转化为三个可审查的工作流：
 
-The initial method coverage is deliberately narrow and deep: OLS and panel fixed effects, instrumental variables, difference-in-differences and event studies, and regression discontinuity. Time series, synthetic control, structural estimation, machine learning, and spatial econometrics are future extensions.
+- `econometrics-audit`：审查目标参数、识别策略、估计方法、统计推断、稳健性与结论强度。
+- `econometrics-replication`：审查 Stata、R 和 Python 复现包；默认不执行不受信任的研究代码。
+- `econometrics-reviewer`：为实证经济学论文生成有证据依据、边界明确的审稿报告。
+- `econometrics-shared`：提供上述三个可触发 Skill 共用的研究契约与质量门槛。
 
-## Install
+首个版本有意选择“小而深”的方法覆盖范围：OLS 与面板固定效应、工具变量、双重差分与事件研究，以及回归不连续设计。时间序列、合成控制、结构估计、机器学习和空间计量经济学将作为后续扩展方向。
 
-Copy the complete skill directories into your Codex skills directory. Keep `econometrics-shared` beside the three triggerable skills because they read its references at runtime.
+## 安装
+
+将完整的 Skill 目录复制到你的 Codex Skills 目录。请将 `econometrics-shared` 与另外三个可触发 Skill 放在一起，因为它们会在运行时读取其中的参考资料。
 
 ```powershell
 Copy-Item -Recurse skills\econometrics-* $env:USERPROFILE\.codex\skills\
 ```
 
-Start a new Codex task after installation. Example requests:
+安装后新建一个 Codex 任务。示例请求：
 
 ```text
-Use econometrics-audit to audit the identification strategy and inference in this DID paper.
-Use econometrics-replication to inspect this Stata replication package without running it.
-Use econometrics-reviewer to write a bounded referee report for this manuscript.
+使用 econometrics-audit 审查这篇 DID 论文的识别策略和统计推断。
+使用 econometrics-replication 检查这个 Stata 复现包，但不要运行其中的代码。
+使用 econometrics-reviewer 为这篇论文撰写一份边界明确的审稿报告。
 ```
 
-## Design principles
+## 设计原则
 
-1. Define the estimand before recommending an estimator.
-2. Separate evidence, inference, and recommendation.
-3. Treat identifying assumptions as claims requiring institutional support, diagnostics, and explicit boundaries.
-4. Never invent results, specifications, data access, robustness checks, citations, or journal requirements.
-5. Prefer reproducible artifacts and deterministic checks over decorative prose.
-6. Mark unsupported methods as outside MVP coverage instead of improvising a false checklist.
+1. 推荐估计量之前，先定义目标参数。
+2. 区分证据、推断和建议。
+3. 将识别假设视为需要制度背景支持、诊断检验和明确适用边界的主张。
+4. 不得虚构研究结果、模型设定、数据访问情况、稳健性检验、引用或期刊要求。
+5. 优先产出可复现的研究材料并使用确定性检查，而不是追求装饰性文字。
+6. 对 MVP 尚未覆盖的方法明确标注超出范围，不临时拼凑可能造成误导的检查清单。
 
-## Validate
+## 验证
 
-The project has no third-party Python dependencies.
+本项目不依赖任何第三方 Python 软件包。
 
 ```powershell
 python scripts/validate_skills.py
 python -m unittest discover -s tests -v
 ```
 
-## Status
+## 项目状态
 
-MVP / Draft. The workflows and deterministic checks are implemented, but Stable status should require forward-testing on diverse real manuscripts and replication packages.
+MVP / 草案。工作流和确定性检查已经实现，但在面向多种真实论文和复现包完成前向测试之前，不应将项目状态标记为稳定版。
 
-## License
+## 许可证
 
-Apache-2.0. See `LICENSE`.
+采用 Apache-2.0 许可证，详见 [`LICENSE`](LICENSE)。
