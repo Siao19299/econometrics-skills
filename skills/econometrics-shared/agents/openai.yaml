@@ -1,0 +1,4 @@
+interface:
+  display_name: "Econometrics Shared"
+  short_description: "Shared econometric research contracts and quality gates"
+  default_prompt: "Use $econometrics-shared to apply shared econometric research and reporting standards."

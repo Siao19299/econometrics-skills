@@ -1,0 +1,4 @@
+interface:
+  display_name: "Econometrics Audit"
+  short_description: "Audit identification, estimation, inference, and claims"
+  default_prompt: "Use $econometrics-audit to audit this empirical research design and its causal claims."

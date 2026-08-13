@@ -1,0 +1,4 @@
+interface:
+  display_name: "Econometrics Reviewer"
+  short_description: "Simulate a rigorous empirical economics peer review"
+  default_prompt: "Use $econometrics-reviewer to review this empirical economics manuscript."

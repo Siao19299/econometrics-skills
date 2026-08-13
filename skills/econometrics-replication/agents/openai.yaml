@@ -1,0 +1,4 @@
+interface:
+  display_name: "Econometrics Replication"
+  short_description: "Audit reproducibility of empirical economics projects"
+  default_prompt: "Use $econometrics-replication to audit this Stata, R, or Python replication package."
